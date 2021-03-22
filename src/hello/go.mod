@@ -1,4 +1,4 @@
-module github.com/bjulian5/go-bazel-fullstack-template/hello
+module hello
 
 go 1.15
 
