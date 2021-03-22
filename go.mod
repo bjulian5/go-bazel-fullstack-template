@@ -1,4 +1,4 @@
-module hello
+module go-bazel-fullstack-template
 
 go 1.15
 
