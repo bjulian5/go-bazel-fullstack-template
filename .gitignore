@@ -1,0 +1,35 @@
+# Bazel
+
+# Ignore output directory symlinks
+bazel-*
+
+# The IDEA Bazel plugin project dir and it should not be shared;
+# Developers should Import from project/.bazelproject
+.ijwb
+
+# User-specific .bazelrc files
+user.bazelrc
+.bazelrc.user
+
+# MacOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Boilerplate
+# ===========
+# Linux
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
