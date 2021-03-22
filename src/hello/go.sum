@@ -1,0 +1,4 @@
+github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=
+github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
+github.com/theothertomelliott/must v0.0.0-20180901182306-492b25fad7e5 h1:wiHTVDN3/H3LaCzpWaM+wAqVHzQiw3nLfhDcF1CKB6Q=
+github.com/theothertomelliott/must v0.0.0-20180901182306-492b25fad7e5/go.mod h1:msE31Uogkj1CZtu/4lKS7OlnBuBzGO9lH5PZ/BvGKDk=
