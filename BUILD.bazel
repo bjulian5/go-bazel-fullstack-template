@@ -1,4 +1,7 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
+exports_files(["tsconfig.json"])
+
+# gazelle:exclude node_modules
 # gazelle:prefix go-bazel-fullstack-template
 gazelle(name = "gazelle")
