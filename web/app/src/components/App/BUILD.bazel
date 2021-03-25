@@ -1,0 +1,19 @@
+package(default_visibility = ["//visibility:public"])
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/bazel/rules:sass.bzl", "sass_library")
+
+ts_library(
+    name = "ts_lib",
+    srcs = glob(
+        ["*.ts","*.tsx"]
+    ),
+    deps = [
+        "@npm//@types/react",
+        "@npm//react",
+    ],
+)
+
+sass_library(
+    name = "sass_lib",
+    srcs = ["App.scss"]
+)

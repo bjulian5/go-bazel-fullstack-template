@@ -5,15 +5,16 @@ pkg_web(
     name = "dist",
     additional_root_paths = ["web/app/src"],
     srcs = [
+        ":index.html",
         "//web/app/src:bundle",
         "//web/app/src:styles",
-    ] + glob(["**"])
+    ] + glob(["public/**"])
 )
 
 http_server(
-    name = "app_server",
+    name = "server",
     data = [
         ":dist"
     ],
-    templated_args = ["."],
+    templated_args = ["./web"],
 )

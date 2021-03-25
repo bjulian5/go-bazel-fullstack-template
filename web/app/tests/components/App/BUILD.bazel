@@ -1,0 +1,17 @@
+package(default_visibility = ["//visibility:public"])
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+ts_library(
+    name = "ts_lib",
+    srcs = glob(
+        ["*.ts","*.tsx"]
+    ),
+    deps = [
+        "//web/app/src/components/App:ts_lib",
+        "@npm//@types/react",
+        "@npm//@testing-library/jest-dom",
+        "@npm//@testing-library/react",
+        "@npm//@testing-library/user-event",
+        "@npm//react",
+    ],
+)

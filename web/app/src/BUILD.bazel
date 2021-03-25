@@ -1,38 +1,32 @@
 package(default_visibility = ["//visibility:public"])
-load("//tools/bazel/js:esbuild.bzl", "esbuild")
-load("@npm//@bazel/typescript:index.bzl", "ts_library")
 load("//tools/bazel/rules:sass.bzl", "sass_library", "sass_binary")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/bazel/js:esbuild.bzl", "esbuild")
+
+sass_binary(
+    name = "styles",
+    src = "index.scss",
+    out = "styles.css",
+    deps = [
+        "//web/app/src/components/App:sass_lib"
+    ]
+)
 
 ts_library(
-    name = "lib",
+    name = "ts_lib",
     srcs = glob(
         ["*.ts","*.tsx"]
     ),
     deps = [
         "@npm//@types/react",
         "@npm//@types/react-dom",
-        "@npm//@testing-library/jest-dom",
-        "@npm//@testing-library/react",
-        "@npm//@testing-library/user-event",
         "@npm//react",
         "@npm//react-dom",
-        "@npm//web-vitals",
+        "//web/app/src/components/App:ts_lib",
+        "//web/app/src/libs/web-vitals:ts_lib"
     ],
 )
 
-sass_library(
-    name = "sass_lib",
-    srcs = ["App.scss"]
-)
-
-sass_binary(
-    name = "styles",
-    src = "index.scss",
-    out = "main.css",
-    deps = [
-        ":sass_lib"
-    ]
-)
 
 esbuild(
     name = "bundle",
@@ -45,6 +39,6 @@ esbuild(
         "process.env.NODE_ENV=\"production\""
     ],
     deps = [
-        ":lib",
+        ":ts_lib"
     ],
 )
