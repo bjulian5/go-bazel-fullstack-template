@@ -1,0 +1,19 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
+load("@npm//http-server:index.bzl", "http_server")
+
+pkg_web(
+    name = "dist",
+    additional_root_paths = ["web/app/src"],
+    srcs = [
+        "//web/app/src:bundle",
+        "//web/app/src:styles",
+    ] + glob(["**"])
+)
+
+http_server(
+    name = "app_server",
+    data = [
+        ":dist"
+    ],
+    templated_args = ["."],
+)

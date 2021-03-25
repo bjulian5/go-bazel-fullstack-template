@@ -56,3 +56,11 @@ npm_install(
 
 load("//tools/bazel/js:esbuild_repo.bzl", "esbuild_dependencies")
 esbuild_dependencies()
+
+
+############################################
+# SASS Support
+############################################
+
+load("//tools/bazel/rules:sass_deps.bzl", "sass_repositories")
+sass_repositories()
